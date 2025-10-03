@@ -14,7 +14,7 @@ function formatBytes(n) {
 /** Return "x.x%" string safely. */
 function percent(part, whole) {
   if (!whole) return "0%";
-  return `${((part / whole) * 100).toFixed(1)}%";
+  return `${((part / whole) * 100).toFixed(1)}%`;
 }
 
 /** Summarize a list of file records into aggregate stats. */
@@ -73,7 +73,7 @@ export async function printTree(root, { maxDepth = 3, ignore = new Set() } = {})
     for (let i = 0; i < entries.length; i++) {
       const ent = entries[i];
       if (ignore.has(ent.name)) continue;
-      const isLast = i == lastIdx;
+      const isLast = i === lastIdx;
       const connector = isLast ? "└── " : "├── ";
       const nextPrefix = prefix + (isLast ? "    " : "│   ");
       const label = ent.isDirectory() ? chalk.bold(ent.name) : ent.name;
